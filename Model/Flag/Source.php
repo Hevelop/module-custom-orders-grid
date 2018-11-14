@@ -21,7 +21,7 @@ class Source implements OptionSourceInterface
      */
     public function toOptionArray()
     {
-        $availableOptions = ['1' => 'Flagged', '0' => 'Not flagged'];
+        $availableOptions = ['1' => __('Flagged'), '0' => __('Not flagged')];
         $options = [];
         foreach ($availableOptions as $key => $value) {
             $options[] = [

@@ -56,10 +56,10 @@ class FlagOrder extends Column
                 $flag = $order->getData("flag_order");
                 $onclick = "window.ajaxOrderFlag(this);";
                 if ($flag) {
-                    $export_status = "<a class='flagged' onclick='".$onclick."' data-ajax='" . $this->getFlagUrl($order,$flag) . "' href='javascript:void(0)' target='_blank'><span>Un-Flag</span></a>";
+                    $export_status = "<a class='flagged' onclick='" . $onclick . "' data-ajax='" . $this->getFlagUrl($order, $flag) . "' href='javascript:void(0)' target='_blank'><span>" . __('Un-Flag') . "</span></a>";
                 } else {
 
-                    $export_status = "<a onclick='".$onclick."' data-ajax='" . $this->getFlagUrl($order,$flag) . "' href='javascript:void(0)' target='_blank'><span>Flag</span></a>";
+                    $export_status = "<a onclick='" . $onclick . "' data-ajax='" . $this->getFlagUrl($order, $flag) . "' href='javascript:void(0)' target='_blank'><span>" . __('Flag') . "</span></a>";
                 }
 
 

@@ -35,12 +35,12 @@ class UpdateFlag extends \Magento\Backend\App\Action
                 if ($order->getFlagOrder()) {
                     $order->setFlagOrder(0);
                     $order->save();
-                    $result->setData(['message' => __('Flag')]);
+                    $result->setData(['message' => '<span>' . __('Flag') . '</span>']);
 
                 } else {
                     $order->setFlagOrder(1);
                     $order->save();
-                    $result->setData(['message' => __('Un-Flag')]);
+                    $result->setData(['message' => '<span>' . __('Un-Flag') . '</span>']);
                 }
                 $result->setHttpResponseCode(\Magento\Framework\Webapi\Rest\Response::HTTP_OK);
                 return $result;

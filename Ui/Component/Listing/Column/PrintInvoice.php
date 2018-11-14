@@ -35,8 +35,7 @@ class PrintInvoice extends Column
         UrlInterface $urlBuilder,
         array $components = [],
         array $data = []
-    )
-    {
+    ) {
         $this->_orderRepository = $orderRepository;
         $this->_searchCriteria = $criteria;
         $this->_urlBuilder = $urlBuilder;
@@ -54,16 +53,13 @@ class PrintInvoice extends Column
             foreach ($dataSource['data']['items'] as & $item) {
 
                 $order = $this->_orderRepository->get($item["entity_id"]);
-//                $status = $order->getData("export_status");
                 $url = $this->getPrintUrl($order);
 
-                if($url){
-                    $export_status = "<a href='".$url."' target='_blank'>Print</a>";
+                if ($url) {
+                    $export_status = "<a href='" . $url . "' target='_blank'>" . __('Print') . "</a>";
                 } else {
-                    $export_status = "<p>No invoices</p>";
+                    $export_status = "<p>" . __('No invoices') . "</p>";
                 }
-
-
 
 
                 $item[$this->getData('name')] = $export_status;
@@ -76,13 +72,13 @@ class PrintInvoice extends Column
     public function getPrintUrl($order)
     {
         $invoices = $order->getInvoiceCollection();
-        if(count($invoices)){
+        if (count($invoices)) {
             $id = $invoices->getFirstItem()->getId();
             return $this->getUrl('sales/order_invoice/print', ['invoice_id' => $id]);
         }
 
 
-        //ok url https://www.website.com/admin/sales/order_invoice/print/invoice_id/1234/
+        //url https://www.website.com/admin/sales/order_invoice/print/invoice_id/1234/
 
         return false;
 
@@ -92,7 +88,8 @@ class PrintInvoice extends Column
      * Generate url by route and parameters
      *
      * @param   string $route
-     * @param   array $params
+     * @param   array  $params
+     *
      * @return  string
      */
     public function getUrl($route = '', $params = [])

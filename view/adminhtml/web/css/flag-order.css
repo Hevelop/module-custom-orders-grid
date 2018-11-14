@@ -8,6 +8,11 @@
 .flag-order a.error {
     background-color: #ffcccc;
     padding: 5px;
+    color: black;
+}
+
+.flag-order a.error:before {
+    display: none;
 }
 
 .flag-order a {
@@ -15,7 +20,7 @@
     color: white;
     display: inline-block;
     border-radius: 5px;
-    padding: 10px 5px;
+    padding: 15px;
     white-space: nowrap;
     width: 100%;
     text-decoration: none;
@@ -47,6 +52,6 @@
     color: white;
     content: '\e632';
     font-size: 1.5rem;
-    left: 2.2rem;
-    margin-top: -1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

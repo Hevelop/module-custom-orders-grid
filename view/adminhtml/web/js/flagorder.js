@@ -15,11 +15,11 @@ require(
           .done(function (data, textStatus, jqXHR) {
             $(button).removeClass('error');
             $(button).toggleClass('flagged');
-            $(button).text(data.message);
+            $(button).html(data.message);
           })
           .fail(function () {
             $(button).addClass('error');
-            $(button).text(data.message);
+            $(button).html(data.message);
           });
       };
     });
