@@ -1,0 +1,52 @@
+.flag-order a.flagged {
+    background-color: green;
+}
+.flag-order a.flagged:before{
+    content: '\e62d';
+}
+
+.flag-order a.error {
+    background-color: #ffcccc;
+    padding: 5px;
+}
+
+.flag-order a {
+    background-color: #007bdb;
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 5px;
+    white-space: nowrap;
+    width: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.flag-order a span{
+    display: none;
+}
+
+.flag-order {
+    text-align: center;
+}
+
+.flag-order a:before {
+    background: none;
+    border: 0;
+    font-family: 'Admin Icons';
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    line-height: inherit;
+    position: absolute;
+    speak: none;
+    text-shadow: none;
+    top: 50%;
+    width: auto;
+    color: white;
+    content: '\e632';
+    font-size: 1.5rem;
+    left: 2.2rem;
+    margin-top: -1rem;
+}

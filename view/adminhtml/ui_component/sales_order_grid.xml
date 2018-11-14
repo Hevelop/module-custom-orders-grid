@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="sales_order_columns">
+        <column name="print_invoice" class="Hevelop\CustomOrdersGrid\Ui\Component\Listing\Column\PrintInvoice">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="label" xsi:type="string" translate="true">Print Invoice</item>
+                    <item name="fieldAction" xsi:type="boolean">false</item>
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                </item>
+            </argument>
+        </column>
+        <column name="flag_order" class="Hevelop\CustomOrdersGrid\Ui\Component\Listing\Column\FlagOrder">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Hevelop\CustomOrdersGrid\Model\Flag\Source</item>
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="component" xsi:type="string">Hevelop_CustomOrdersGrid/js/grid/cells/link</item>
+                    <item name="label" xsi:type="string" translate="true">Flag Order</item>
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>
